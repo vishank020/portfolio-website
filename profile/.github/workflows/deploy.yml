@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # 👇 build output INSIDE profile
-          path: profile/dist
+          path: profile/build
 
   deploy:
     needs: build
