@@ -76,9 +76,10 @@ const Navbar = ({ toggleTheme, darkMode }) => {
           <NavLink to="/" end onClick={closeMenu} className={navLinkClass}>Home</NavLink>
           <NavLink to="/projects" onClick={closeMenu} className={navLinkClass}>Projects</NavLink>
           <NavLink to="/experience" onClick={closeMenu} className={navLinkClass}>Experience</NavLink>
+          <NavLink to="/education" onClick={closeMenu} className={navLinkClass}>Education</NavLink>
           <NavLink to="/resume" onClick={closeMenu} className={navLinkClass}>Resume</NavLink>
           <NavLink to="/about" onClick={closeMenu} className={navLinkClass}>About Me</NavLink>
-          <NavLink to="/contact" onClick={closeMenu} className={navLinkClass}>Contact</NavLink>
+          {/* <NavLink to="/contact" onClick={closeMenu} className={navLinkClass}>Contact</NavLink> */}
 
           {/* Theme Toggle (Mobile) */}
           <button
