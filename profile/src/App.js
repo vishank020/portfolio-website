@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  useLocation
+} from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 // Component Imports
@@ -19,9 +24,11 @@ import Resume from './pages/Resume';
 // Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-  React.useEffect(() => {
+
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
   return null;
 };
 
@@ -45,13 +52,13 @@ const AnimatedRoutes = () => {
 };
 
 function App() {
-  // 1. Initialize theme state
+  // Theme state
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem('theme');
     return saved ? JSON.parse(saved) : true;
   });
 
-  // 2. Apply the "dark" class to the HTML tag
+  // Apply dark mode
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
@@ -61,9 +68,8 @@ function App() {
     localStorage.setItem('theme', JSON.stringify(darkMode));
   }, [darkMode]);
 
-  // 3. Theme toggle function
   const toggleTheme = () => {
-    setDarkMode(!darkMode);
+    setDarkMode(prev => !prev);
   };
 
   return (
@@ -71,7 +77,6 @@ function App() {
       <div className="flex flex-col min-h-screen transition-colors duration-300">
         <ScrollToTop />
 
-        {/* Pass props to Navbar */}
         <Navbar toggleTheme={toggleTheme} darkMode={darkMode} />
 
         <main className="flex-grow">
