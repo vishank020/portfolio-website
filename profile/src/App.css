@@ -5,13 +5,16 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  border-radius: 500px;
+  
+  /* shape-outside: circle(40px at 20% 30%); */
 }
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
 .App-header {
   background-color: #282c34;
