@@ -19,28 +19,33 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    # 👇 THIS IS THE KEY FIX
+    defaults:
+      run:
+        working-directory: profile
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # ---- OPTIONAL: Node setup (remove if plain HTML) ----
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: profile/package-lock.json
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build
         run: npm run build
-      # ------------------------------------------------------
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist   # 👈 change if your build output differs
+          # 👇 build output INSIDE profile
+          path: profile/dist
 
   deploy:
     needs: build
