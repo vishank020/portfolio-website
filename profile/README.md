@@ -18,6 +18,6 @@ Check out my personal website and portfolio here:  [🔗Visit my portfolio](http
 - Tailwind CSS
 - DevOps Foundation
 
-## [🔗Lets Get in Touch](vishanksingh.vercel.app)
 
-
+---
+[🔗Lets Get in Touch](vishanksingh.vercel.app)
