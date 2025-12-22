@@ -68,9 +68,9 @@ const Education = () => {
                 <div className="glass-card p-5 flex items-center gap-4">
                     <FaFilePdf className="text-red-500 text-xl shrink-0" />
                     <div>
-                        <p className="font-semibold">Google Data Analytics</p>
+                        <a href={"/powerBI.pdf"} target="_blank" className="font-semibold">PowerBI</a>
                         <p className="text-sm text-gray-400">
-                            Coursera · Data analysis, visualization, SQL
+                            Udemy ·aData visualization
                         </p>
                     </div>
                 </div>
@@ -78,9 +78,9 @@ const Education = () => {
                 <div className="glass-card p-5 flex items-center gap-4">
                     <FaFilePdf className="text-red-500 text-xl shrink-0" />
                     <div>
-                        <p className="font-semibold">NVIDIA AI/ML Fundamentals</p>
+                        <a href={"/SpokenTutorial.pdf"} target="_blank" className="font-semibold">Python Certification</a>
                         <p className="text-sm text-gray-400">
-                            NVIDIA · Neural networks, GPU computing basics
+                            IIT-Bombay · Python, Pandas, Numpy, Matplotlib
                         </p>
                     </div>
                 </div>

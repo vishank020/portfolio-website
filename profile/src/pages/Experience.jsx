@@ -29,7 +29,20 @@ const Experience = () => {
 
         {/* Fullstack Internship */}
         <div className="relative pl-8">
-          <div className="absolute -left-[9px] top-0 bg-[#16814f] w-4 h-4 rounded-full shadow-[0_0_10px_#00f2ea]"></div>
+          <div className="absolute -left-[9px] top-0 bg-blue-500 w-4 h-4 rounded-full "></div>
+
+          <h3 className="text-2xl font-bold">Volunteer at Tech club</h3>
+          <p className="text-blue-500 font-mono mb-2">
+            Tcet ACM SIGAI | sept 2024 – October 2024
+          </p>
+          <p className="text-gray-400">
+            Volunteered to work on club's official website. In which we build frontend of the website uing frameworks
+             such as React.js and Tailwind CSS.
+          </p>
+        </div>
+        {/* Fullstack Internship */}
+        <div className="relative pl-8">
+          <div className="absolute -left-[9px] top-0 bg-[#16814f] w-4 h-4 rounded-full "></div>
 
           <h3 className="text-2xl font-bold">Fullstack Developer Intern</h3>
           <p className="text-[#16814f] font-mono mb-2">

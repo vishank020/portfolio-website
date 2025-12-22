@@ -11,13 +11,20 @@ const About = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
           <h2 className="text-4xl font-bold mb-6">About <span className="text-[#16814f]">Me</span></h2>
-          <p className="text-gray-400 text-lg leading-relaxed mb-6">
-            I am a B.Tech student passionate about bridging the gap between raw data and actionable intelligence.
-            My development environment runs on a <b>GTX 1650</b>, which has taught me the importance of code optimization.
-          </p>
-          <p className="text-gray-400 text-lg leading-relaxed">
-            When I'm not training models or debugging React apps, I organize gaming tournaments or get lost in fantasy novels.
-          </p>
+          <ul>
+            <li className="text-gray-400 text-lg leading-relaxed mb-6">
+              I’m a B.Tech student specializing in Artificial Intelligence & Machine Learning, focused on building practical,
+              real-world systems.
+            </li>
+            <li className="text-gray-400 text-lg leading-relaxed mb-6">
+              I have solid hands-on experience with backend development, APIs, databases, and CI/CD pipelines, and
+              I’m comfortable owning features end-to-end across the stack.
+            </li>
+            <li className="text-gray-400 text-lg leading-relaxed mb-6">
+              My core interests include applied ML, conversational AI, automation, and data-driven systems that solve
+              concrete, high-impact problems.
+            </li>
+          </ul>
         </div>
 
         <div className="grid grid-cols-1 gap-4">

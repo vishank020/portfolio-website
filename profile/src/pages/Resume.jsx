@@ -5,6 +5,8 @@ import { FaDownload, FaFilePdf, FaExternalLinkAlt } from "react-icons/fa";
 const Resume = () => {
   // PDF must be placed inside /public
   const resumeLink = "/Resume.pdf";
+  const PowerbiLink = "./powerBI.pdf";
+  const tutorialLink = "./SpokenTutorial.pdf";
 
   return (
     <motion.div
@@ -45,19 +47,32 @@ const Resume = () => {
               Certifications
             </h3>
             <ul className="text-sm space-y-3 text-gray-400">
-              <li className="flex items-start gap-2">
+              <a href={PowerbiLink}
+                target="_blank"
+                className="flex items-start gap-2">
                 <FaFilePdf
                   className="mt-1 text-red-500"
                   aria-hidden="true"
                 />
-                Google Data Analytics
-              </li>
-              <li className="flex items-start gap-2">
+                PowerBI Certification Udemy
+              </a>
+              <a href={tutorialLink}
+                target="_blank"
+                className="flex items-start gap-2">
                 <FaFilePdf
                   className="mt-1 text-red-500"
                   aria-hidden="true"
                 />
-                NVIDIA AI/ML Fundamentals
+                Python Certification IITB
+              </a>
+              <li
+                target="_blank"
+                className="flex items-start gap-2">
+                <FaFilePdf
+                  className="mt-1 text-red-500"
+                  aria-hidden="true"
+                />
+                FullStack certification Udemy
               </li>
             </ul>
           </div>
