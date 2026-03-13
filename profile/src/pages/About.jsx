@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGamepad, FaBookOpen, FaLaptopCode } from 'react-icons/fa';
+import {FaBookOpen, FaLaptopCode } from 'react-icons/fa';
 
 const About = () => {
   return (

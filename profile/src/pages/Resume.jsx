@@ -49,6 +49,7 @@ const Resume = () => {
             <ul className="text-sm space-y-3 text-gray-400">
               <a href={powerBiLink}
                 target="_blank"
+                rel="noreferrer"
                 className="flex items-start gap-2">
                 <FaFilePdf
                   className="mt-1 text-red-500"
@@ -58,6 +59,7 @@ const Resume = () => {
               </a>
               <a href={tutorialLink}
                 target="_blank"
+                rel="noreferrer"
                 className="flex items-start gap-2">
                 <FaFilePdf
                   className="mt-1 text-red-500"
@@ -67,6 +69,7 @@ const Resume = () => {
               </a>
               <li
                 target="_blank"
+                rel="noreferrer"
                 className="flex items-start gap-2">
                 <FaFilePdf
                   className="mt-1 text-red-500"

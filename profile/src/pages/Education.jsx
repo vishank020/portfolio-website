@@ -68,7 +68,7 @@ const Education = () => {
                 <div className="glass-card p-5 flex items-center gap-4">
                     <FaFilePdf className="text-red-500 text-xl shrink-0" />
                     <div>
-                        <a href={"/powerBI.pdf"} target="_blank" className="font-semibold">PowerBI</a>
+                        <a href={"/powerBI.pdf"} target="_blank" rel="noreferrer" className="font-semibold">PowerBI</a>
                         <p className="text-sm text-gray-400">
                             Udemy ·aData visualization
                         </p>
@@ -78,7 +78,7 @@ const Education = () => {
                 <div className="glass-card p-5 flex items-center gap-4">
                     <FaFilePdf className="text-red-500 text-xl shrink-0" />
                     <div>
-                        <a href={"/SpokenTutorial.pdf"} target="_blank" className="font-semibold">Python Certification</a>
+                        <a href={"/SpokenTutorial.pdf"} target="_blank" rel="noreferrer" className="font-semibold">Python Certification</a>
                         <p className="text-sm text-gray-400">
                             IIT-Bombay · Python, Pandas, Numpy, Matplotlib
                         </p>
