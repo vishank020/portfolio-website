@@ -37,6 +37,14 @@ const Projects = () => {
       icon: <FaChartLine />,
       github: "https://github.com/vishank020",
       link: "#"
+    },
+    {
+      title: "VC Intelligence Platform",
+      desc: "AA precision AI scout for venture capital sourcing and triage.",
+      tags: ["AI", "Gemini API", "React"],
+      icon: <FaChartLine />,
+      github: "https://github.com/vishank020/VC-Intel",
+      link: "https://vc-intel-project.vercel.app/companies"
     }
   ];
 

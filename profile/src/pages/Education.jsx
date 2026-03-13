@@ -25,7 +25,7 @@ const Education = () => {
                         2023 – 2027 | 3rd Year (5th Semester)
                     </p>
                     <p className="text-gray-400">
-                        CGPA: 7.65 <br />
+                        CGPA: 7.73 <br />
                         Focus areas include Compiler Design, Agentic AI, Machine Learning,
                         and Competitive Programming. Planning higher studies via GATE / Europe.
                     </p>

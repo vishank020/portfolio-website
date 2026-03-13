@@ -44,7 +44,7 @@ const Experience = () => {
         <div className="relative pl-8">
           <div className="absolute -left-[9px] top-0 bg-[#16814f] w-4 h-4 rounded-full "></div>
 
-          <h3 className="text-2xl font-bold">Fullstack Developer Intern</h3>
+          <h3 className="text-2xl font-bold">AI and Software Developer Intern</h3>
           <p className="text-[#16814f] font-mono mb-2">
             Rusaka Technologies | Dec 2025 – Present
           </p>

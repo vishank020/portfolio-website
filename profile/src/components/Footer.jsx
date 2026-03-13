@@ -62,7 +62,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <p className="mt-6 text-xs md:text-sm text-center hover:text-white transition">
-          Designed & Built by Vishank Singh © 2025
+          Designed & Built by Vishank Singh © 2026
         </p>
       </div>
     </footer>

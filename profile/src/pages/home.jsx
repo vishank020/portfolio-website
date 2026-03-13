@@ -2,14 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
-
+import Projects from './Projects';
+import Experience from './Experience';
+import Education from './Education';
+import About from './About';
 import myProfilePic from "../assets/images/profile-pic.webp";
 
 const Home = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      className="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-16"
+      className="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-32"
     >
       <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-[#16814f] mb-8">
 
@@ -27,8 +30,8 @@ const Home = () => {
           options={{
             strings: [
               'AI & ML Engineer',
-              'Building FinCoach AI',
-              'DevOps Enthusiast'
+              'Building AI Agents',
+              'MLOps Enthusiast'
             ],
             autoStart: true,
             loop: true,
@@ -51,6 +54,10 @@ const Home = () => {
           </button>
         </Link>
       </div>
+      <section id="projects"><Projects /></section>
+      <section id="experience"><Experience /></section>
+      <section id="education"><Education /></section>
+      <section id="about"><About /></section>
     </motion.div>
   );
 };

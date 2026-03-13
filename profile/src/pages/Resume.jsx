@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { FaDownload, FaFilePdf, FaExternalLinkAlt } from "react-icons/fa";
 
 const Resume = () => {
-  // PDF must be placed inside /public
-  const resumeLink = "/Resume.pdf";
-  const PowerbiLink = "./powerBI.pdf";
-  const tutorialLink = "./SpokenTutorial.pdf";
+  // Use absolute public URLs so links work from any client-side route.
+  const resumeLink = `${process.env.PUBLIC_URL}/Resume.pdf`;
+  const powerBiLink = `${process.env.PUBLIC_URL}/powerBI.pdf`;
+  const tutorialLink = `${process.env.PUBLIC_URL}/SpokenTutorial.pdf`;
 
   return (
     <motion.div
@@ -47,7 +47,7 @@ const Resume = () => {
               Certifications
             </h3>
             <ul className="text-sm space-y-3 text-gray-400">
-              <a href={PowerbiLink}
+              <a href={powerBiLink}
                 target="_blank"
                 className="flex items-start gap-2">
                 <FaFilePdf

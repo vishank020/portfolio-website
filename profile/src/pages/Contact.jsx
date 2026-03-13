@@ -48,7 +48,7 @@ const Contact = () => {
       <div className="w-full max-w-lg">
         <h2 className="text-4xl font-bold mb-2 text-center">Get in Touch</h2>
         <p className="text-gray-400 text-center mb-8">
-          Whether for an internship, a freelance project, or just to chat about AI.
+          Whether for an internship, a freelance project, or just to chat about Tech.
         </p>
 
         <form
@@ -71,7 +71,7 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               placeholder="John Cooper"
-              className="w-full p-3 bg-grey-500/30 border border-gray-700 rounded text-white focus:border-[#16814f] outline-none transition"
+              className="w-full p-3 bg-grey-500/30 border border-gray-700 rounded text-black focus:border-[#16814f] outline-none transition"
               required
             />
           </div>
@@ -91,7 +91,7 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="ceara@example.com"
-              className="w-full p-3 bg-grey-500/30 border border-gray-700 rounded text-white focus:border-[#16814f] outline-none transition"
+              className="w-full p-3 bg-grey-500/30 border border-gray-700 rounded text-black focus:border-[#16814f] outline-none transition"
               required
             />
           </div>
@@ -111,7 +111,7 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               placeholder="Hey Vishank, I have a project..."
-              className="w-full p-3 bg-grey-500/30 border border-gray-700 rounded text-white focus:border-[#16814f] outline-none transition resize-none"
+              className="w-full p-3 bg-grey-500/30 border border-gray-700 rounded text-black focus:border-[#16814f] outline-none transition resize-none"
               required
             />
           </div>
