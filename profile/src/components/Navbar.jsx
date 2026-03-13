@@ -33,8 +33,8 @@ const Navbar = ({ toggleTheme, darkMode }) => {
           <button onClick={() => scrollToSection('projects')} className={baseNavClass}>Projects</button>
           <button onClick={() => scrollToSection('experience')} className={baseNavClass}>Experience</button>
           <button onClick={() => scrollToSection('education')} className={baseNavClass}>Education</button>
-          <NavLink to="/resume" className={navLinkClass}>Resume</NavLink>
           <button onClick={() => scrollToSection('about')} className={baseNavClass}>About Me</button>
+          <NavLink to="/resume" className={navLinkClass}>Resume</NavLink>
           <button
             onClick={toggleTheme}
             className="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-yellow-500 dark:text-[#16814f] hover:scale-110 transition"
@@ -65,8 +65,8 @@ const Navbar = ({ toggleTheme, darkMode }) => {
           <button onClick={() => scrollToSection('projects')} className={baseNavClass}>Projects</button>
           <button onClick={() => scrollToSection('experience')} className={baseNavClass}>Experience</button>
           <button onClick={() => scrollToSection('education')} className={baseNavClass}>Education</button>
-          <NavLink to="/resume" onClick={closeMenu} className={navLinkClass}>Resume</NavLink>
           <button onClick={() => scrollToSection('about')} className={baseNavClass}>About Me</button>
+          <NavLink to="/resume" onClick={closeMenu} className={navLinkClass}>Resume</NavLink>
           <button
             onClick={() => { toggleTheme(); closeMenu(); }}
             className="mt-4 flex items-center gap-3 p-3 rounded-xl bg-gray-100 dark:bg-gray-800 text-yellow-500 dark:text-[#16814f]"
