@@ -54,10 +54,10 @@ const Home = () => {
           </button>
         </Link>
       </div>
-      <section id="projects"><Projects /></section>
-      <section id="experience"><Experience /></section>
-      <section id="education"><Education /></section>
-      <section id="about"><About /></section>
+      <section id="projects" className="w-full text-left"><Projects /></section>
+      <section id="experience" className="w-full text-left"><Experience /></section>
+      <section id="education" className="w-full text-left"><Education /></section>
+      <section id="about" className="w-full text-left"><About /></section>
     </motion.div>
   );
 };

@@ -8,7 +8,7 @@ const Education = () => {
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="min-h-screen pt-28 px-6 md:px-20 max-w-4xl mx-auto"
+            className="min-h-screen pt-28 px-6 md:px-20 max-w-4xl mx-auto text-left"
         >
             {/* ===== Education ===== */}
             <h2 className="text-4xl font-bold mb-10">Education</h2>
@@ -70,7 +70,7 @@ const Education = () => {
                     <div>
                         <a href={"/powerBI.pdf"} target="_blank" rel="noreferrer" className="font-semibold">PowerBI</a>
                         <p className="text-sm text-gray-400">
-                            Udemy ·aData visualization
+                            Udemy · Data visualization
                         </p>
                     </div>
                 </div>

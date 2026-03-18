@@ -3,7 +3,7 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const ProjectCard = ({ data }) => {
   return (
-    <div className="glass-card p-6 flex flex-col h-full hover:translate-y-[-5px] transition-transform duration-300">
+    <div className="glass-card p-6 flex flex-col h-full  transition-transform duration-300">
       <div className="flex justify-between items-start mb-4">
         <div className="text-3xl text-[#16814f]">{data.icon}</div>
         <div className="flex gap-3 text-lg text-gray-400">

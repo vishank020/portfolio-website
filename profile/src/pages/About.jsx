@@ -6,7 +6,7 @@ const About = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      className="min-h-screen pt-28 px-6 md:px-20 max-w-5xl mx-auto"
+      className="min-h-screen pt-28 px-6 md:px-20 max-w-5xl mx-auto text-left"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>

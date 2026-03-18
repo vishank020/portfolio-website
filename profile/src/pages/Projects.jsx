@@ -51,7 +51,7 @@ const Projects = () => {
   return (
     <motion.div 
       initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ opacity: 0 }}
-      className="min-h-screen pt-28 px-6 md:px-20 max-w-7xl mx-auto"
+      className="min-h-screen pt-28 px-6 md:px-20 max-w-7xl mx-auto text-left"
     >
       <h2 className="text-4xl font-bold mb-12 border-b border-gray-800 pb-4">
         My <span className="text-[#16814f]">Projects</span>
