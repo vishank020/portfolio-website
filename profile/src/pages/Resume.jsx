@@ -38,7 +38,7 @@ const Resume = () => {
             <div className="border-l-2 border-gray-700 pl-4">
               <p className="font-bold text-grey-700">B.Tech in AI & ML</p>
               <p className="text-sm text-gray-400">2023 – 2027</p>
-              <p className="text-xs text-pink-500">CGPA: 7.65 (Current)</p>
+              <p className="text-xs text-pink-500">CGPA: 7.74 (Current)</p>
             </div>
           </div>
 
