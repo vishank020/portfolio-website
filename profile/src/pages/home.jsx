@@ -14,6 +14,7 @@ const Home = () => {
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
       className="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-32"
     >
+      <meta name="google-site-verification" content="Np7fSZl9XrJ9n1uYmtep4jcWNEdJLOK9bNhkxDTaRFc" />
       <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-[#16814f] mb-8">
 
         <img src={myProfilePic}
