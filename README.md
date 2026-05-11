@@ -1,34 +1,147 @@
-# Vishank Singh
+# Vishank Singh — Portfolio Website
 
-Hi! I’m **Vishank Singh**  a tech enthusiast.
+Personal portfolio website showcasing my work in AI/ML, full-stack development, applied machine learning projects, and technical experiments.
 
-## Portfolio
-Check out my personal website and portfolio here:  [🔗Visit my portfolio](https://vishanksingh.vercel.app)
+## Portfolio Link
 
+* Live Website:  [Vishank Singh](https://vishanksingh.vercel.app)
 
-## What I Do
-- Machine Learning
-- Data Analytics
-- Full-stack web development  
-
-## Tech Stack
-- Python
-- JavaScript Foundation
-- React.js
-- Tailwind CSS
-- DevOps Foundation
-
+* GitHub Pages Deployment:  [Vishank Singh](https://vishank020.github.io/portfolio-website/)
 
 ---
-[🔗Lets Get in Touch](vishanksingh.vercel.app)
 
-## Deploy to GitHub Pages
+# Overview
 
-This project is already wired for GitHub Pages with a workflow at [profile/.github/workflows/deploy.yml](profile/.github/workflows/deploy.yml).
+This portfolio website serves as a centralized platform to present:
 
-1. In GitHub, open the repository settings and set Pages source to GitHub Actions.
-2. Push your changes to the `main` branch.
-3. Wait for the workflow to finish, then open:
-	[https://vishank020.github.io/portfolio-website](https://vishank020.github.io/portfolio-website)
+- Projects and technical work
+- Skills and technology stack
+- Experience and achievements
+- Research and experimentation
+- Contact and professional links
 
-The app uses `HashRouter`, so direct refreshes on routes like `#/contact` should work on Pages.
+The website is designed to provide recruiters, collaborators, and developers with a clear overview of my technical background and areas of interest.
+
+---
+
+# Problem Statement
+
+Most student portfolios either:
+
+- Lack structured project presentation
+- Focus only on UI without technical depth
+- Do not clearly communicate problem-solving ability
+- Become difficult to maintain and deploy
+- Are not optimized for fast navigation and responsiveness
+
+As someone working across AI/ML, full-stack development, and applied systems, I needed a portfolio that could:
+
+- Present projects with proper technical context
+- Maintain a clean and responsive UI
+- Be easily deployable and scalable
+- Act as both a professional profile and technical showcase
+
+---
+
+# Solution
+
+This portfolio website was built to create a minimal, modern, and developer-focused platform that highlights:
+
+- Real-world projects
+- Technical stack and tools
+- Applied AI/ML work
+- Development experience
+- Continuous learning and experimentation
+
+The application emphasizes:
+
+- Responsive design
+- Smooth navigation
+- Component-based frontend architecture
+- Easy deployment using GitHub Pages and Vercel
+- Maintainable project structure
+
+---
+
+# Architecture
+
+## Frontend
+
+The frontend is built using modern React-based architecture with reusable UI components.
+
+### Core Technologies
+
+- React.js
+- JavaScript
+- Tailwind CSS
+- React Router
+- Vite
+
+---
+
+## Deployment Flow
+
+```text
+Developer Push → GitHub Repository → GitHub Actions Workflow → GitHub Pages Deployment
+
+The project is also deployable on Vercel for faster global delivery and simplified hosting.
+```
+
+---
+### Features
+- Responsive portfolio UI
+- Project showcase section
+- Skills and technology stack display
+- Contact and social links
+- GitHub Pages support
+- Vercel deployment support
+- SPA routing using HashRouter
+
+---
+## Tech Stack
+### Languages
+- Python
+- JavaScript
+
+### Frontend
+- React.js
+- Tailwind CSS
+- HTML5
+- CSS3
+### Tools & Platforms
+- GitHub Actions
+- GitHub Pages
+- Vercel
+- Git
+### Domains of Interest
+- Machine Learning
+- AI Engineering
+- Full-Stack Development
+- Data Analytics
+- DevOps Fundamentals
+---
+## Project Structure
+```bash
+portfolio-website/
+│
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── assets/
+│   └── App.jsx
+│
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
+│
+├── package.json
+├── vite.config.js
+└── README.md
+```
+---
+# Connect With Me
+
+- Portfolio: [Vishank Singh](https://vishank020.github.io/portfolio-website)
+- GitHub: [Vishank020](https://github.com/vishank020)
+- LinkedIn: [Vishank Singh](https://www.linkedin.com/in/vishank-singh/)
