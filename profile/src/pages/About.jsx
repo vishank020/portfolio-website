@@ -102,7 +102,7 @@ const About = () => {
             <div className="space-y-4">
               {[
                 { category: "Languages & Frameworks", skills: ["React", "JavaScript", "Python", "Node.js"] },
-                { category: "AI & ML", skills: ["LangChain", "LangGraph", "LLaMA", "RAG"] },
+                { category: "AI & ML", skills: ["LangChain", "LangGraph", "RAG"] },
                 { category: "Databases", skills: ["MongoDB", "PostgreSQL"] },
                 { category: "DevOps & Tools", skills: ["Docker", "GitHub Actions"] }
               ].map((stack) => (
