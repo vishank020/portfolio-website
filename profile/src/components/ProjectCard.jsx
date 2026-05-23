@@ -3,29 +3,46 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const ProjectCard = ({ data }) => {
   return (
-    <div className="glass-card p-6 flex flex-col h-full  transition-transform duration-300">
-      <div className="flex justify-between items-start mb-4">
-        <div className="text-3xl text-[#16814f]">{data.icon}</div>
-        <div className="flex gap-3 text-lg text-gray-400">
+    <div className="glass-card p-6 flex flex-col h-full">
+      <div className="flex justify-between items-start mb-5">
+        <div className="text-3xl text-[var(--accent)]">{data.icon}</div>
+        <div className="flex gap-3.5 text-lg text-gray-500 dark:text-gray-400">
           {data.github && (
-            <a href={data.github} target="_blank" rel="noreferrer" className="hover:text-[#16814f] transition">
+            <a 
+              href={data.github} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="hover:text-[var(--accent)] hover:scale-110 transition-all duration-200"
+            >
               <FaGithub />
             </a>
           )}
-          {data.link && (
-            <a href={data.link} target="_blank" rel="noreferrer" className="hover:text-[#16814f] transition">
+          {data.link && data.link !== "#" && (
+            <a 
+              href={data.link} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="hover:text-[var(--accent)] hover:scale-110 transition-all duration-200"
+            >
               <FaExternalLinkAlt size={18} />
             </a>
           )}
         </div>
       </div>
       
-      <h3 className="text-xl font-bold text-grey-700 mb-2">{data.title}</h3>
-      <p className="text-gray-400 text-sm mb-4 flex-grow">{data.desc}</p>
+      <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2 mono-font">
+        {data.title}
+      </h3>
+      <p className="text-gray-600 dark:text-gray-400 text-sm mb-5 flex-grow leading-relaxed">
+        {data.desc}
+      </p>
       
       <div className="flex flex-wrap gap-2 mt-auto">
         {data.tags.map((tag, index) => (
-          <span key={index} className="text-xs font-mono text-[#16814f] bg-[#51bd8a]/30 px-2 py-1 rounded">
+          <span 
+            key={index} 
+            className="text-2xs font-mono text-[var(--accent)] bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded"
+          >
             {tag}
           </span>
         ))}

@@ -60,6 +60,18 @@ function App() {
     localStorage.setItem('theme', JSON.stringify(darkMode));
   }, [darkMode]);
 
+  // Cursor tracking for spotlight glow effect
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      document.body.style.setProperty('--mouse-x', `${e.clientX}px`);
+      document.body.style.setProperty('--mouse-y', `${e.clientY}px`);
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   const toggleTheme = () => {
     setDarkMode(prev => !prev);
   };

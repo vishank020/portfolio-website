@@ -47,7 +47,7 @@ const Contact = () => {
     >
       <div className="w-full max-w-lg">
         <h2 className="text-4xl font-bold mb-2 text-center">Get in Touch</h2>
-        <p className="text-gray-400 text-center mb-8">
+        <p className="text-gray-600 dark:text-gray-400 text-center mb-8">
           Whether for an internship, a freelance project, or just to chat about Tech.
         </p>
 
@@ -60,7 +60,7 @@ const Contact = () => {
           <div>
             <label
               htmlFor="name"
-              className="text-sm text-gray-400 mb-1 block"
+              className="text-sm text-gray-600 dark:text-gray-400 mb-1 block"
             >
               Your Name
             </label>
@@ -71,7 +71,7 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               placeholder="John Cooper"
-              className="w-full p-3 bg-grey-500/30 border border-gray-700 rounded text-black focus:border-[#16814f] outline-none transition"
+              className="w-full p-3 bg-gray-500/10 border border-gray-300 dark:border-gray-700 rounded text-gray-800 dark:text-gray-200 focus:border-[var(--accent)] outline-none transition"
               required
             />
           </div>
@@ -80,7 +80,7 @@ const Contact = () => {
           <div>
             <label
               htmlFor="email"
-              className="text-sm text-gray-400 mb-1 block"
+              className="text-sm text-gray-600 dark:text-gray-400 mb-1 block"
             >
               Your Email
             </label>
@@ -91,7 +91,7 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="ceara@example.com"
-              className="w-full p-3 bg-grey-500/30 border border-gray-700 rounded text-black focus:border-[#16814f] outline-none transition"
+              className="w-full p-3 bg-gray-500/10 border border-gray-300 dark:border-gray-700 rounded text-gray-800 dark:text-gray-200 focus:border-[var(--accent)] outline-none transition"
               required
             />
           </div>
@@ -100,7 +100,7 @@ const Contact = () => {
           <div>
             <label
               htmlFor="message"
-              className="text-sm text-gray-400 mb-1 block"
+              className="text-sm text-gray-600 dark:text-gray-400 mb-1 block"
             >
               Message
             </label>
@@ -111,7 +111,7 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               placeholder="Hey Vishank, I have a project..."
-              className="w-full p-3 bg-grey-500/30 border border-gray-700 rounded text-black focus:border-[#16814f] outline-none transition resize-none"
+              className="w-full p-3 bg-gray-500/10 border border-gray-300 dark:border-gray-700 rounded text-gray-800 dark:text-gray-200 focus:border-[var(--accent)] outline-none transition resize-none"
               required
             />
           </div>

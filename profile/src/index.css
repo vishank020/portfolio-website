@@ -11,45 +11,67 @@
 /* ---------- LIGHT MODE ---------- */
 :root {
   /* Core surfaces */
-  --bg-color: #ffffff;
-  --text-main-dynamic: #0f172a;
-  /* slate-900 */
-  --card-bg: #ffffff;
-  --nav-border: rgba(15, 23, 42, 0.08);
+  --bg-color: #f5f2eb; /* Warm Almond Sand backdrop */
+  --text-main-dynamic: #26231e; /* Deep Charcoal Stone text */
+  --card-bg: #faf6ec; /* Cozy Warm Cream Card */
+  --nav-border: rgba(139, 130, 110, 0.12); /* Warm Earthy Border */
+  --grid-color: rgba(22, 129, 79, 0.30); /* Forest Green Dot Grid (30% Opacity) */
 
-  /* Accents (grounded, non-neon) */
-  --accent: #16814f;
-  /* blue-600 */
-  --accent-secondary: #60e1a5;
-  /* indigo-700 */
+  /* Accents (grounded, organic) */
+  --accent: #16814f; /* Organic Forest Green */
+  --accent-secondary: #51bd8a;
+  --shadow-glow: rgba(22, 129, 79, 0.05);
+  --mouse-glow: rgba(22, 129, 79, 0.09); /* Soft organic spotlight glow */
 }
 
 html {
-  scroll-behavior:smooth;
+  scroll-behavior: smooth;
+  background-color: var(--bg-color);
+  background-image: radial-gradient(var(--grid-color) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+  transition: background-color 0.3s ease;
 }
 
 /* ---------- DARK MODE ---------- */
 .dark {
-  --bg-color: #0a0a0a;
+  --bg-color: #080808;
   --text-main-dynamic: #e5e7eb;
   /* gray-200 */
-  --card-bg: rgba(22, 22, 22, 0.75);
-  --nav-border: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(15, 15, 15, 0.65);
+  --nav-border: rgba(255, 255, 255, 0.06);
+  --grid-color: rgba(16, 185, 129, 0.26); /* Emerald Glow Dot Grid (26% Opacity) */
 
   /* Accents (neon, expressive) */
-  --accent: #16814f;
-  --accent-secondary: #60e1a5;
+  --accent: #10b981;
+  --accent-secondary: #34d399;
+  --shadow-glow: rgba(16, 185, 129, 0.15);
+  --mouse-glow: rgba(16, 185, 129, 0.11); /* Cyber green spotlight glow */
 }
 
 /* =========================
    Global Styles
-========================= */
+   ========================= */
 body {
   margin: 0;
-  background-color: var(--bg-color);
+  position: relative;
+  background: transparent;
   color: var(--text-main-dynamic);
   font-family: 'Inter', sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+/* Mouse spotlight glow layer */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1; /* Renders in front of html grid but behind all text elements */
+  background: radial-gradient(
+    350px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
+    var(--mouse-glow),
+    transparent 80%
+  );
 }
 
 h1,
@@ -65,22 +87,28 @@ h3,
 .glass-card {
   background: var(--card-bg);
   border: 1px solid var(--nav-border);
-  border-radius: 12px;
-  transition: background 0.3s ease, border 0.3s ease;
+  border-radius: 16px;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Glass effect ONLY in dark mode */
 .dark .glass-card {
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px -10px var(--shadow-glow);
 }
 
 /* =========================
    Buttons
 ========================= */
 .btn-primary {
-  background: linear-gradient(45deg,
+  background: linear-gradient(135deg,
       var(--accent),
-      #177e7a);
+      #059669);
   color: #ffffff;
   font-weight: 600;
   padding: 10px 24px;
@@ -91,8 +119,8 @@ h3,
 }
 
 .btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--shadow-glow);
 }
 
 /* =========================
@@ -143,4 +171,25 @@ h3,
 .whatsapp-float:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
+}
+
+/* =========================
+   Custom Scrollbar
+ ========================= */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--nav-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
 }

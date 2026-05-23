@@ -17,7 +17,7 @@ const Resume = () => {
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
         <h2 className="text-4xl font-bold">
-          My <span className="text-[#16814f]">Resume</span>
+          My <span className="text-[var(--accent)]">Resume</span>
         </h2>
 
         <a
@@ -34,23 +34,23 @@ const Resume = () => {
         {/* Left Column */}
         <div className="space-y-6">
           <div className="glass-card p-6">
-            <h3 className="text-xl font-bold mb-4 text-[#16814f]">Education</h3>
+            <h3 className="text-xl font-bold mb-4 text-[var(--accent)]">Education</h3>
             <div className="border-l-2 border-gray-700 pl-4">
-              <p className="font-bold text-grey-700">B.Tech in AI & ML</p>
-              <p className="text-sm text-gray-400">2023 – 2027</p>
+              <p className="font-bold text-gray-800 dark:text-gray-200">B.Tech in AI & ML</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">2023 – 2027</p>
               <p className="text-xs text-pink-500">CGPA: 7.74 (Current)</p>
             </div>
           </div>
 
           <div className="glass-card p-6">
-            <h3 className="text-xl font-bold mb-4 text-[#16814f]">
+            <h3 className="text-xl font-bold mb-4 text-[var(--accent)]">
               Certifications
             </h3>
-            <ul className="text-sm space-y-3 text-gray-400">
+            <ul className="text-sm space-y-3 text-gray-600 dark:text-gray-400">
               <a href={powerBiLink}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-start gap-2">
+                className="flex items-start gap-2 hover:text-[var(--accent)] transition-colors">
                 <FaFilePdf
                   className="mt-1 text-red-500"
                   aria-hidden="true"
@@ -60,7 +60,7 @@ const Resume = () => {
               <a href={tutorialLink}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-start gap-2">
+                className="flex items-start gap-2 hover:text-[var(--accent)] transition-colors">
                 <FaFilePdf
                   className="mt-1 text-red-500"
                   aria-hidden="true"
@@ -70,7 +70,7 @@ const Resume = () => {
               <li
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-start gap-2">
+                className="flex items-start gap-2 hover:text-[var(--accent)] transition-colors">
                 <FaFilePdf
                   className="mt-1 text-red-500"
                   aria-hidden="true"
