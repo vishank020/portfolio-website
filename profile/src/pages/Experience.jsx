@@ -6,19 +6,19 @@ const Experience = () => {
     {
       title: "AI and Software Developer Intern",
       company: "Rusaka Technologies",
-      date: "Dec 2025 – Present",
+      date: "Dec 2025 – Jan 2026",
       color: "bg-emerald-500",
       textColor: "text-emerald-600 dark:text-emerald-400",
       desc: "Working on social impact software solutions. Gaining hands-on experience in full-stack development and system design.",
       tags: ["Full-Stack", "System Design", "AI Integration", "React"]
     },
     {
-      title: "Volunteer at Tech Club",
+      title: "Open Source Contributor",
       company: "Tcet ACM SIGAI",
       date: "Sept 2024 – Oct 2024",
       color: "bg-blue-500",
       textColor: "text-blue-600 dark:text-blue-400",
-      desc: "Volunteered to work on the club's official website. Built components using React.js and Tailwind CSS.",
+      desc: "Contributed to the club's official website as an open source collaborator. Built and improved components using React.js and Tailwind CSS.",
       tags: ["React.js", "Tailwind CSS", "Git", "Collaboration"]
     },
     {
