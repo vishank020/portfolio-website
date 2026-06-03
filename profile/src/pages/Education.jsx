@@ -21,7 +21,7 @@ const Education = () => {
                 {[
                     {
                         degree: "B.Tech in AI & ML",
-                        institution: "Thadomal Shahani Engineering College", 
+                        institution: "Thakur College of Engineering and Technology", 
                         date: "2023 – 2027 | 3rd Year",
                         grade: "CGPA: 7.73",
                         color: "bg-pink-500",
