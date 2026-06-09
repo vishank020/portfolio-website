@@ -6,13 +6,13 @@ const educationList = [
   {
     id: "btech",
     degree: "B.Tech in AI & ML",
-    institution: "Thakur College of Engineering and Technology", 
-    date: "2023 – 2027 | 3rd Year",
+    institution: "Thakur College of Engineering and Technology",
+    date: "2023 – 2027 | 4th Year",
     grade: "CGPA: 7.73",
     color: "bg-pink-500",
     textColor: "text-pink-600 dark:text-pink-400",
-    desc: "Focus areas include Compiler Design, Agentic AI, Machine Learning, and Competitive Programming. Planning higher studies via GATE / Europe.",
-    tags: ["Agentic AI", "Machine Learning", "Compiler Design", "Competitive Programming"]
+    desc: "Focus areas include Agentic AI, LLM Systems, Machine Learning, and Full-Stack Development.",
+    tags: ["Agentic AI", "LLM Systems", "Machine Learning", "Full-Stack Development"]
   },
   {
     id: "hsc",
