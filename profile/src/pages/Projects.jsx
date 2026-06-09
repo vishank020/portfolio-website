@@ -6,38 +6,38 @@ import { SiPython } from 'react-icons/si';
 
 const projectList = [
   {
-    title: "FinCoach AI",
-    desc: "Agentic financial assistant for gig workers. Integrates n8n workflows with Sarvam AI and PostgreSQL for vernacular financial advice.",
-    tags: ["n8n", "PostgreSQL", "Sarvam AI", "React"],
+    title: "Saarthi",
+    desc: "Agentic student onboarding system built with LangGraph and LangChain. Uses LLaMA 3 via Groq, ChromaDB for RAG, and FastAPI backend with a React frontend. IEEE paper submitted.",
+    tags: ["LangGraph", "LangChain", "Groq", "ChromaDB", "FastAPI", "React"],
     icon: <FaServer />,
     github: "https://github.com/vishank020",
-    link: "https://fincoachai.vercel.app",
+    link: "#",
     category: "AI & Agents",
     gridClass: "md:col-span-2"
   },
   {
-    title: "PRISM (IoT)",
-    desc: "Smart India Hackathon hardware project. A real-time deforestation monitoring system utilizing IoT sensors.",
-    tags: ["IoT", "Python", "Hardware"],
-    icon: <FaCode />,
-    github: "https://github.com/vishank020",
-    link: "#",
-    category: "IoT & Systems",
-    gridClass: "md:col-span-1"
-  },
-  {
-    title: "Auto-Correct Compiler",
-    desc: "AI-based tool for students to auto-correct programming assignments using Streamlit and LLM APIs.",
-    tags: ["Streamlit", "LLM", "Python"],
+    title: "Crop Disease Detection",
+    desc: "CNN model for crop disease classification using the PlantVillage dataset. End-to-end deep learning pipeline covering preprocessing, augmentation, training, and evaluation across 15 disease classes. Achieved 66.33% test accuracy.",
+    tags: ["Python", "TensorFlow", "Keras", "Scikit-learn", "NumPy"],
     icon: <SiPython />,
     github: "https://github.com/vishank020",
     link: "#",
+    category: "Machine Learning",
+    gridClass: "md:col-span-1"
+  },
+  {
+    title: "FinCoach AI",
+    desc: "AI-powered financial assistant for budgeting, saving, and financial planning. Conversational query processing via LLM APIs with structured input handling and modular frontend/backend architecture.",
+    tags: ["Python", "React.js", "LLM APIs"],
+    icon: <FaChartLine />,
+    github: "https://github.com/vishank020",
+    link: "https://fincoachai.vercel.app",
     category: "AI & Agents",
     gridClass: "md:col-span-1"
   },
   {
     title: "VC Intelligence Platform",
-    desc: "A precision AI scout for venture capital sourcing and triage.",
+    desc: "Precision AI scout for venture capital sourcing and triage.",
     tags: ["AI", "Gemini API", "React"],
     icon: <FaChartLine />,
     github: "https://github.com/vishank020/VC-Intel",
@@ -46,19 +46,18 @@ const projectList = [
     gridClass: "md:col-span-2"
   },
   {
-    title: "Stock Market Analyzer",
-    desc: "Automated fetcher for Indian stock data using Upstox API, stored in MongoDB for analysis.",
-    tags: ["MongoDB", "Upstox API", "Data Engineering"],
-    icon: <FaChartLine />,
+    title: "Automated CI/CD Pipeline",
+    desc: "Automated CI/CD pipeline for a Python application using GitHub Actions. Covers linting, testing, build validation, and deployment — triggered on PRs and merges to main.",
+    tags: ["GitHub Actions", "Python", "Flake8", "Pytest", "GCP"],
+    icon: <FaCode />,
     github: "https://github.com/vishank020",
     link: "#",
-    category: "Full-Stack",
-    gridClass: "md:col-span-3"
+    category: "DevOps",
+    gridClass: "md:col-span-1"
   }
 ];
 
-const categories = ["All", "AI & Agents", "Full-Stack", "IoT & Systems"];
-
+const categories = ["All", "AI & Agents", "Machine Learning", "DevOps"];
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("All");
 
