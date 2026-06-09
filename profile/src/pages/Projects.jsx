@@ -7,7 +7,7 @@ import { SiPython } from 'react-icons/si';
 const projectList = [
   {
     title: "Saarthi",
-    desc: "Agentic student onboarding system built with LangGraph and LangChain. Uses LLaMA 3 via Groq, ChromaDB for RAG, and FastAPI backend with a React frontend. IEEE paper submitted.",
+    desc: "Agentic student onboarding system built with LangGraph and LangChain. Uses LLaMA 3 via Groq, ChromaDB for RAG, and FastAPI backend with a React frontend.",
     tags: ["LangGraph", "LangChain", "Groq", "ChromaDB", "FastAPI", "React"],
     icon: <FaServer />,
     github: "https://github.com/vishank020",
@@ -37,7 +37,7 @@ const projectList = [
   },
   {
     title: "VC Intelligence Platform",
-    desc: "Precision AI scout for venture capital sourcing and triage.",
+    desc: "AI-powered VC sourcing platform that turns a fund's investment thesis into an always-on discovery engine. Features faceted search, live web enrichment, and thesis-aligned company insights with transparent sourcing.",
     tags: ["AI", "Gemini API", "React"],
     icon: <FaChartLine />,
     github: "https://github.com/vishank020/VC-Intel",
