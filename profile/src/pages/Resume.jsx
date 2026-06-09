@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { FaDownload, FaFilePdf, FaExternalLinkAlt } from "react-icons/fa";
 
 const Resume = () => {
@@ -9,7 +9,7 @@ const Resume = () => {
   const tutorialLink = `${process.env.PUBLIC_URL}/SpokenTutorial.pdf`;
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       className="min-h-screen pt-28 px-6 md:px-20 max-w-5xl mx-auto"
@@ -108,6 +108,7 @@ const Resume = () => {
               src={`${resumeLink}#toolbar=0`}
               className="w-full h-full border-none"
               title="Resume PDF Preview"
+              sandbox=""
             />
           </div>
 
@@ -116,7 +117,7 @@ const Resume = () => {
           </p>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 

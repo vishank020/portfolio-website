@@ -1,39 +1,42 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
+
+const experiences = [
+  {
+    id: "intern-rusaka",
+    title: "AI and Software Developer Intern",
+    company: "Rusaka Technologies",
+    date: "Dec 2025 – Jan 2026",
+    color: "bg-emerald-500",
+    textColor: "text-emerald-600 dark:text-emerald-400",
+    desc: "Working on social impact software solutions. Gaining hands-on experience in full-stack development and system design.",
+    tags: ["Full-Stack", "System Design", "AI Integration", "React"]
+  },
+  {
+    id: "volunteer-tcet",
+    title: "Open Source Contributor",
+    company: "Tcet ACM SIGAI",
+    date: "Sept 2024 – Oct 2024",
+    color: "bg-blue-500",
+    textColor: "text-blue-600 dark:text-blue-400",
+    desc: "Contributed to the club's official website as an open source collaborator. Built and improved components using React.js and Tailwind CSS.",
+    tags: ["React.js", "Tailwind CSS", "Git", "Collaboration"]
+  },
+  {
+    id: "intern-junoon",
+    title: "Social Internship",
+    company: "Junoon Foundation",
+    date: "May 2024 – June 2024",
+    color: "bg-pink-500",
+    textColor: "text-pink-600 dark:text-pink-400",
+    desc: "Contributed to community-driven initiatives and on-ground NGO operations. Gained exposure to social impact work, coordination, and real-world problem solving.",
+    tags: ["NGO Operations", "Community Service", "Coordination"]
+  }
+];
 
 const Experience = () => {
-  const experiences = [
-    {
-      title: "AI and Software Developer Intern",
-      company: "Rusaka Technologies",
-      date: "Dec 2025 – Jan 2026",
-      color: "bg-emerald-500",
-      textColor: "text-emerald-600 dark:text-emerald-400",
-      desc: "Working on social impact software solutions. Gaining hands-on experience in full-stack development and system design.",
-      tags: ["Full-Stack", "System Design", "AI Integration", "React"]
-    },
-    {
-      title: "Open Source Contributor",
-      company: "Tcet ACM SIGAI",
-      date: "Sept 2024 – Oct 2024",
-      color: "bg-blue-500",
-      textColor: "text-blue-600 dark:text-blue-400",
-      desc: "Contributed to the club's official website as an open source collaborator. Built and improved components using React.js and Tailwind CSS.",
-      tags: ["React.js", "Tailwind CSS", "Git", "Collaboration"]
-    },
-    {
-      title: "Social Internship",
-      company: "Junoon Foundation",
-      date: "May 2024 – June 2024",
-      color: "bg-pink-500",
-      textColor: "text-pink-600 dark:text-pink-400",
-      desc: "Contributed to community-driven initiatives and on-ground NGO operations. Gained exposure to social impact work, coordination, and real-world problem solving.",
-      tags: ["NGO Operations", "Community Service", "Coordination"]
-    }
-  ];
-
   return (
-    <motion.div
+    <m.div
       initial={{ x: -50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -45,12 +48,12 @@ const Experience = () => {
 
       <div className="relative border-l-2 border-gray-800 ml-4 space-y-12">
         {experiences.map((exp, idx) => (
-          <div key={idx} className="relative pl-8">
+          <div key={exp.id} className="relative pl-8">
             {/* Timeline Indicator Node */}
             <div className={`absolute -left-[9px] top-1.5 w-4 h-4 rounded-full ${exp.color} ring-4 ring-[var(--bg-color)]`} />
             
             {/* Experience Card */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -73,17 +76,17 @@ const Experience = () => {
 
               {/* Technologies Applied */}
               <div className="flex flex-wrap gap-2">
-                {exp.tags.map((tag, tIdx) => (
-                  <span key={tIdx} className="text-xs font-mono text-[var(--accent)] bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded">
+                {exp.tags.map((tag) => (
+                  <span key={tag} className="text-xs font-mono text-[var(--accent)] bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded">
                     {tag}
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           </div>
         ))}
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 

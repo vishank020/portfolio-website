@@ -22,13 +22,13 @@ const TerminalWidget = () => {
     
     const printLine = () => {
       if (currentLine < systemLogs.length) {
-        setHistory((prev) => [...prev, { text: systemLogs[currentLine], isCmd: false }]);
+        setHistory((prev) => [...prev, { id: `boot-${currentLine}`, text: systemLogs[currentLine], isCmd: false }]);
         currentLine++;
         timer = setTimeout(printLine, 120);
       }
     };
     
-    printLine();
+    timer = setTimeout(printLine, 0);
     return () => clearTimeout(timer);
   }, []);
 
@@ -40,7 +40,10 @@ const TerminalWidget = () => {
   const handleCommand = (e) => {
     if (e.key === "Enter") {
       const command = inputVal.trim().toLowerCase();
-      const newHistory = [...history, { text: `guest@vishank-dev:~$ ${inputVal}`, isCmd: true }];
+      const newHistory = [
+        ...history,
+        { id: `cmd-${Date.now()}-${Math.random()}`, text: `guest@vishank-dev:~$ ${inputVal}`, isCmd: true }
+      ];
       
       if (command === "clear") {
         setHistory([]);
@@ -111,7 +114,7 @@ const TerminalWidget = () => {
       }
 
       if (response) {
-        newHistory.push({ text: response, isCmd: false });
+        newHistory.push({ id: `resp-${Date.now()}-${Math.random()}`, text: response, isCmd: false });
       }
       
       setHistory(newHistory);
@@ -134,8 +137,8 @@ const TerminalWidget = () => {
 
       {/* Terminal Screen Console */}
       <div className="p-4 h-64 overflow-y-auto flex flex-col gap-2 text-left selection:bg-green-700 selection:text-white scrollbar-thin scrollbar-thumb-gray-800">
-        {history.map((line, idx) => (
-          <div key={idx} className="whitespace-pre-wrap leading-relaxed">
+        {history.map((line) => (
+          <div key={line.id} className="whitespace-pre-wrap leading-relaxed">
             {line.isCmd ? (
               <span className="text-emerald-300">{line.text}</span>
             ) : (
@@ -160,6 +163,7 @@ const TerminalWidget = () => {
           autoCorrect="off"
           autoCapitalize="off"
           spellCheck="false"
+          aria-label="Terminal command input"
         />
       </div>
     </div>

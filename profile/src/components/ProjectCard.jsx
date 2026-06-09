@@ -38,9 +38,9 @@ const ProjectCard = ({ data }) => {
       </p>
       
       <div className="flex flex-wrap gap-2 mt-auto">
-        {data.tags.map((tag, index) => (
+        {data.tags.map((tag) => (
           <span 
-            key={index} 
+            key={tag} 
             className="text-2xs font-mono text-[var(--accent)] bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded"
           >
             {tag}

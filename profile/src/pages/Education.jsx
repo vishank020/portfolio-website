@@ -1,13 +1,49 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { FaFilePdf } from "react-icons/fa";
+
+const educationList = [
+  {
+    id: "btech",
+    degree: "B.Tech in AI & ML",
+    institution: "Thakur College of Engineering and Technology", 
+    date: "2023 – 2027 | 3rd Year",
+    grade: "CGPA: 7.73",
+    color: "bg-pink-500",
+    textColor: "text-pink-600 dark:text-pink-400",
+    desc: "Focus areas include Compiler Design, Agentic AI, Machine Learning, and Competitive Programming. Planning higher studies via GATE / Europe.",
+    tags: ["Agentic AI", "Machine Learning", "Compiler Design", "Competitive Programming"]
+  },
+  {
+    id: "hsc",
+    degree: "HSC",
+    institution: "Divine Providence High School and Junior College",
+    date: "2022",
+    grade: "Score: 66.50%",
+    color: "bg-blue-500",
+    textColor: "text-blue-600 dark:text-blue-400",
+    desc: "Completed Higher Secondary Certificate with focus on Science and Mathematics streams.",
+    tags: ["Physics", "Chemistry", "Mathematics"]
+  },
+  {
+    id: "ssc",
+    degree: "SSC",
+    institution: "St. Mary's English High School",
+    date: "2020",
+    grade: "Score: 77.80%",
+    color: "bg-emerald-500",
+    textColor: "text-emerald-600 dark:text-emerald-400",
+    desc: "Secondary School Certificate curriculum.",
+    tags: ["General Science", "Secondary Education"]
+  }
+];
 
 const Education = () => {
     const powerBiLink = `${process.env.PUBLIC_URL}/powerBI.pdf`;
     const tutorialLink = `${process.env.PUBLIC_URL}/SpokenTutorial.pdf`;
 
     return (
-        <motion.div
+        <m.div
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -18,44 +54,13 @@ const Education = () => {
 
             {/* Timeline wrapper */}
             <div className="relative border-l-2 border-gray-800 ml-4 space-y-12 mb-16">
-                {[
-                    {
-                        degree: "B.Tech in AI & ML",
-                        institution: "Thakur College of Engineering and Technology", 
-                        date: "2023 – 2027 | 3rd Year",
-                        grade: "CGPA: 7.73",
-                        color: "bg-pink-500",
-                        textColor: "text-pink-600 dark:text-pink-400",
-                        desc: "Focus areas include Compiler Design, Agentic AI, Machine Learning, and Competitive Programming. Planning higher studies via GATE / Europe.",
-                        tags: ["Agentic AI", "Machine Learning", "Compiler Design", "Competitive Programming"]
-                    },
-                    {
-                        degree: "HSC",
-                        institution: "Divine Providence High School and Junior College",
-                        date: "2022",
-                        grade: "Score: 66.50%",
-                        color: "bg-blue-500",
-                        textColor: "text-blue-600 dark:text-blue-400",
-                        desc: "Completed Higher Secondary Certificate with focus on Science and Mathematics streams.",
-                        tags: ["Physics", "Chemistry", "Mathematics"]
-                    },
-                    {
-                        degree: "SSC",
-                        institution: "St. Mary's English High School",
-                        date: "2020",
-                        grade: "Score: 77.80%",
-                        color: "bg-emerald-500",
-                        textColor: "text-emerald-600 dark:text-emerald-400",
-                        desc: "Secondary School Certificate curriculum.",
-                        tags: ["General Science", "Secondary Education"]
-                    }
-                ].map((edu, idx) => (
-                    <div key={idx} className="relative pl-8">
+                {educationList.map((edu, idx) => (
+                    <div key={edu.id} className="relative pl-8">
                         {/* Timeline Node dot */}
                         <div className={`absolute -left-[9px] top-1.5 w-4 h-4 rounded-full ${edu.color} ring-4 ring-[var(--bg-color)]`} />
                         
                         {/* Education Card */}
-                        <motion.div
+                        <m.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
@@ -83,13 +88,13 @@ const Education = () => {
 
                             {/* Tags */}
                             <div className="flex flex-wrap gap-2">
-                                {edu.tags.map((tag, tIdx) => (
-                                    <span key={tIdx} className="text-xs font-mono text-[var(--accent)] bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded">
+                                {edu.tags.map((tag) => (
+                                    <span key={tag} className="text-xs font-mono text-[var(--accent)] bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded">
                                         {tag}
                                     </span>
                                 ))}
                             </div>
-                        </motion.div>
+                        </m.div>
                     </div>
                 ))}
             </div>
@@ -132,7 +137,7 @@ const Education = () => {
                     </div>
                 </a>
             </div>
-        </motion.div>
+        </m.div>
     );
 };
 

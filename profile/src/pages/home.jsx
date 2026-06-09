@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import Projects from './Projects';
 import Experience from './Experience';
 import Education from './Education';
@@ -11,7 +11,7 @@ import myProfilePic from "../assets/images/profile-pic.webp";
 
 const Home = () => {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
       className="min-h-screen flex flex-col items-center px-4 pt-20"
     >
@@ -53,13 +53,14 @@ const Home = () => {
 
           <div className="flex gap-4">
             <button 
+              type="button"
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               className="btn-primary"
             >
               View Projects
             </button>
             <Link to="/contact">
-              <button className="px-6 py-2.5 border border-gray-400 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:text-[var(--accent)] hover:border-[var(--accent)] hover:-translate-y-0.5 hover:bg-[var(--accent)]/5 transition-all duration-200 shadow-sm hover:shadow-md">
+              <button type="button" className="px-6 py-2.5 border border-gray-400 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:text-[var(--accent)] hover:border-[var(--accent)] hover:-translate-y-0.5 hover:bg-[var(--accent)]/5 transition-all duration-200 shadow-sm hover:shadow-md">
                 Contact Me
               </button>
             </Link>
@@ -76,7 +77,7 @@ const Home = () => {
       <section id="experience" className="w-full text-left"><Experience /></section>
       <section id="education" className="w-full text-left"><Education /></section>
       <section id="about" className="w-full text-left"><About /></section>
-    </motion.div>
+    </m.div>
   );
 };
 

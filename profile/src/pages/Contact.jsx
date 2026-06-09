@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -40,7 +40,7 @@ const Contact = () => {
   };
 
   return (
-    <motion.div
+    <m.div
       initial={{ y: 40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       className="min-h-screen pt-28 px-4 flex justify-center"
@@ -126,7 +126,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 

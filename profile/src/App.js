@@ -5,7 +5,7 @@ import {
   Route,
   useLocation
 } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
 
 // Component Imports
 import Navbar from './components/Navbar';
@@ -46,7 +46,7 @@ const AnimatedRoutes = () => {
 function App() {
   // Theme state
   const [darkMode, setDarkMode] = useState(() => {
-    const saved = localStorage.getItem('theme');
+    const saved = localStorage.getItem('theme:v1');
     return saved ? JSON.parse(saved) : true;
   });
 
@@ -57,7 +57,7 @@ function App() {
     } else {
       document.documentElement.classList.remove('dark');
     }
-    localStorage.setItem('theme', JSON.stringify(darkMode));
+    localStorage.setItem('theme:v1', JSON.stringify(darkMode));
   }, [darkMode]);
 
   // Cursor tracking for spotlight glow effect
@@ -78,18 +78,20 @@ function App() {
 
   return (
     <Router>
-      <div className="flex flex-col min-h-screen transition-colors duration-300">
-        <ScrollToTop />
+      <LazyMotion features={domAnimation}>
+        <div className="flex flex-col min-h-screen transition-colors duration-300">
+          <ScrollToTop />
 
-        <Navbar toggleTheme={toggleTheme} darkMode={darkMode} />
+          <Navbar toggleTheme={toggleTheme} darkMode={darkMode} />
 
-        <main className="flex-grow">
-          <AnimatedRoutes />
-        </main>
+          <main className="flex-grow">
+            <AnimatedRoutes />
+          </main>
 
-        <WhatsAppButton />
-        <Footer />
-      </div>
+          <WhatsAppButton />
+          <Footer />
+        </div>
+      </LazyMotion>
     </Router>
   );
 }

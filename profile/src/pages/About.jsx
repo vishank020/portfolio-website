@@ -1,10 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { FaBookOpen, FaLaptopCode, FaBrain } from 'react-icons/fa';
 
 const About = () => {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }} 
       animate={{ opacity: 1 }} 
       exit={{ opacity: 0 }}
@@ -18,7 +18,7 @@ const About = () => {
           </h2>
           
           <div className="space-y-6">
-            <motion.p 
+            <m.p 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -26,9 +26,9 @@ const About = () => {
               className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed"
             >
               I’m a B.Tech AI/ML student who builds agentic systems with LangGraph and LangChain. I design RAG pipelines that hold up outside of demo environments, and work with LLMs like LLaMA via Groq where inference speed actually matters.
-            </motion.p>
+            </m.p>
 
-            <motion.p 
+            <m.p 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -36,9 +36,9 @@ const About = () => {
               className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed"
             >
               I’m comfortable across the full stack, handling APIs, databases, and CI/CD pipelines to own features end-to-end.
-            </motion.p>
+            </m.p>
 
-            <motion.p 
+            <m.p 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -46,13 +46,13 @@ const About = () => {
               className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed"
             >
               Most of what I build sits at the intersection of applied machine learning and real software engineering. Not the notebook kind.
-            </motion.p>
+            </m.p>
           </div>
         </div>
 
         {/* Feature Cards Grid */}
         <div className="grid grid-cols-1 gap-6">
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -67,9 +67,9 @@ const About = () => {
                 Agentic workflows, local LLM orchestration, and prompt pipelines.
               </p>
             </div>
-          </motion.div>
+          </m.div>
 
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, delay: 0.1 }}
@@ -84,9 +84,9 @@ const About = () => {
                 Currently reading <i>The Pillars of the Earth</i> by Ken Follett.
               </p>
             </div>
-          </motion.div>
+          </m.div>
 
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, delay: 0.2 }}
@@ -118,10 +118,10 @@ const About = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 
