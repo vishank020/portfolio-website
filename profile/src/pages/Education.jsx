@@ -8,7 +8,7 @@ const educationList = [
     degree: "B.Tech in AI & ML",
     institution: "Thakur College of Engineering and Technology",
     date: "2023 – 2027 | 4th Year",
-    grade: "CGPA: 7.73",
+    grade: "CGPA: 7.98",
     color: "bg-pink-500",
     textColor: "text-pink-600 dark:text-pink-400",
     desc: "Focus areas include Agentic AI, LLM Systems, Machine Learning, and Full-Stack Development.",
