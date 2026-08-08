@@ -29,14 +29,14 @@ const WhatsAppButton = () => {
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="fixed bottom-24 right-8 glass-card p-4 w-72 z-50 shadow-2xl"
+            className="fixed bottom-24 right-8 bg-card border border-border rounded-2xl shadow-sm p-4 w-72 z-50 shadow-2xl"
           >
             <div className="flex justify-between items-center mb-2">
-              <span className="text-gray-800 dark:text-white font-bold">Direct Message</span>
+              <span className="text-foreground font-bold">Direct Message</span>
               <button type="button" onClick={() => setIsOpen(false)} aria-label="Close" className="text-gray-400 hover:text-gray-600 dark:hover:text-white">✕</button>
             </div>
             <textarea
-              className="w-full bg-gray-50 dark:bg-black/50 border border-gray-300 dark:border-gray-700 rounded p-2 text-sm text-gray-800 dark:text-white focus:outline-none focus:border-[#25d366]"
+              className="w-full bg-gray-50 dark:bg-black/50 border border-border rounded p-2 text-sm text-foreground focus:outline-none focus:border-[#25d366]"
               rows="3"
               placeholder="Type your message..."
               value={msg}

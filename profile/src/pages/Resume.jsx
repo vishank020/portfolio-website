@@ -1,121 +1,162 @@
 import React from "react";
 import { m } from "framer-motion";
-import { FaDownload, FaFilePdf, FaExternalLinkAlt } from "react-icons/fa";
+import { GraduationCap, Award, ExternalLink, FileText } from "lucide-react";
 
 const Resume = () => {
-  // Use absolute public URLs so links work from any client-side route.
-  const resumeLink = `${process.env.PUBLIC_URL}/Resume.pdf`;
+  const resumeLink = "https://drive.google.com/file/d/1w0VfXwR7QKncp_XO4f50YIj-DC0BcInO/view?usp=sharing";
+  const resumeEmbedLink = "https://drive.google.com/file/d/1w0VfXwR7QKncp_XO4f50YIj-DC0BcInO/preview";
   const powerBiLink = `${process.env.PUBLIC_URL}/powerBI.pdf`;
   const tutorialLink = `${process.env.PUBLIC_URL}/SpokenTutorial.pdf`;
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
   return (
     <m.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="min-h-screen pt-28 px-6 md:px-20 max-w-5xl mx-auto"
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="min-h-screen pt-28 pb-20 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto"
     >
       {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
-        <h2 className="text-4xl font-bold">
-          My <span className="text-[var(--accent)]">Resume</span>
-        </h2>
+      <m.div variants={item} className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
+        <div>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-2">
+            My <span className="text-primary">Resume</span>
+          </h2>
+          <p className="text-muted-foreground text-lg">Detailed overview of my academic and technical journey.</p>
+        </div>
 
         <a
           href={resumeLink}
-          download
-          aria-label="Download Resume PDF"
-          className="btn-primary flex items-center gap-2 no-underline"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="View Resume PDF"
+          className="px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 flex items-center gap-2 no-underline group"
         >
-          <FaDownload aria-hidden="true" /> Download PDF
+          <ExternalLink size={18} className="group-hover:rotate-12 transition-transform" /> 
+          <span>View Full Resume</span>
         </a>
-      </div>
+      </m.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left Column */}
-        <div className="space-y-6">
-          <div className="glass-card p-6">
-            <h3 className="text-xl font-bold mb-4 text-[var(--accent)]">Education</h3>
-            <div className="border-l-2 border-gray-700 pl-4">
-              <p className="font-bold text-gray-800 dark:text-gray-200">B.Tech in AI & ML</p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">2023 – 2027</p>
-              <p className="text-xs text-pink-500">CGPA: 7.74 (Current)</p>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        {/* Left Column (Highlights) */}
+        <m.div variants={item} className="lg:col-span-4 space-y-6">
+          
+          {/* Education Card */}
+          <div className="bg-card border border-border rounded-2xl p-6 shadow-sm hover:border-primary/30 transition-colors relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="flex items-center gap-3 mb-6 relative z-10">
+              <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                <GraduationCap size={24} />
+              </div>
+              <h3 className="text-xl font-bold">Education</h3>
+            </div>
+            
+            <div className="relative z-10 border-l-2 border-border pl-5 ml-3 space-y-1">
+              <div className="absolute w-3 h-3 bg-primary rounded-full -left-[7px] top-1.5 shadow-[0_0_10px_rgba(var(--primary),0.5)]" />
+              <p className="font-bold text-lg leading-tight">B.Tech in AI & ML</p>
+              <p className="text-sm font-medium text-muted-foreground">TCET, Mumbai</p>
+              <p className="text-xs text-muted-foreground pt-1">2023 – 2027</p>
+              <div className="inline-block mt-3 px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
+                CGPA: 7.98 (Current)
+              </div>
             </div>
           </div>
 
-          <div className="glass-card p-6">
-            <h3 className="text-xl font-bold mb-4 text-[var(--accent)]">
-              Certifications
-            </h3>
-            <ul className="text-sm space-y-3 text-gray-600 dark:text-gray-400">
-              <a href={powerBiLink}
+          {/* Certifications Card */}
+          <div className="bg-card border border-border rounded-2xl p-6 shadow-sm hover:border-primary/30 transition-colors relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="flex items-center gap-3 mb-6 relative z-10">
+              <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                <Award size={24} />
+              </div>
+              <h3 className="text-xl font-bold">Certifications</h3>
+            </div>
+
+            <div className="space-y-3 relative z-10">
+              <a 
+                href={powerBiLink}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-start gap-2 hover:text-[var(--accent)] transition-colors">
-                <FaFilePdf
-                  className="mt-1 text-red-500"
-                  aria-hidden="true"
-                />
-                PowerBI Certification Udemy
+                className="flex items-center justify-between p-3 rounded-xl border border-border/50 bg-background/50 hover:bg-primary/5 hover:border-primary/30 transition-all group/link"
+              >
+                <div className="flex items-center gap-3">
+                  <FileText size={16} className="text-red-500" />
+                  <span className="text-sm font-medium">PowerBI</span>
+                </div>
+                <span className="text-xs text-muted-foreground group-hover/link:text-primary transition-colors">Udemy</span>
               </a>
-              <a href={tutorialLink}
+
+              <a 
+                href={tutorialLink}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-start gap-2 hover:text-[var(--accent)] transition-colors">
-                <FaFilePdf
-                  className="mt-1 text-red-500"
-                  aria-hidden="true"
-                />
-                Python Certification IITB
+                className="flex items-center justify-between p-3 rounded-xl border border-border/50 bg-background/50 hover:bg-primary/5 hover:border-primary/30 transition-all group/link"
+              >
+                <div className="flex items-center gap-3">
+                  <FileText size={16} className="text-red-500" />
+                  <span className="text-sm font-medium">Python</span>
+                </div>
+                <span className="text-xs text-muted-foreground group-hover/link:text-primary transition-colors">IIT Bombay</span>
               </a>
-              <li
+              
+              <div className="flex items-center justify-between p-3 rounded-xl border border-border/50 bg-background/50 cursor-default opacity-80">
+                <div className="flex items-center gap-3">
+                  <Award size={16} className="text-muted-foreground" />
+                  <span className="text-sm font-medium">FullStack Dev</span>
+                </div>
+                <span className="text-xs text-muted-foreground">Udemy</span>
+              </div>
+            </div>
+          </div>
+          
+        </m.div>
+
+        {/* Right Column (PDF Preview) */}
+        <m.div variants={item} className="lg:col-span-8 relative">
+          {/* Ambient Glow */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent opacity-20 blur-2xl rounded-[2.5rem] z-0" />
+          
+          <div className="bg-card border border-border rounded-[2rem] shadow-2xl overflow-hidden relative h-[70vh] min-h-[600px] z-10 p-2">
+            <div className="w-full h-full rounded-[1.5rem] overflow-hidden relative bg-muted/50">
+              {/* View Fullscreen Button */}
+              <a
+                href={resumeLink}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-start gap-2 hover:text-[var(--accent)] transition-colors">
-                <FaFilePdf
-                  className="mt-1 text-red-500"
-                  aria-hidden="true"
-                />
-                FullStack certification Udemy
-              </li>
-            </ul>
-          </div>
-        </div>
+                className="absolute top-4 right-6 z-20 bg-background/80 backdrop-blur-md border border-border text-foreground text-sm font-semibold px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+              >
+                <ExternalLink size={14} />
+                Fullscreen
+              </a>
 
-        {/* Right Column: PDF Preview */}
-        <div className="lg:col-span-2">
-          <div className="glass-card overflow-hidden relative h-[80vh] min-h-[520px]">
-
-            {/* View Fullscreen Button (Top-Right Corner) */}
-            <a
-              href={resumeLink}
-              target="_blank"
-              rel="noreferrer"
-              className="
-        absolute top-4 right-4 z-20
-        bg-white/90 backdrop-blur-sm
-        text-black text-sm font-semibold
-        px-4 py-2 rounded-full
-        flex items-center gap-2
-          shadow-md hover:bg-white transition
-        "
-            >
-              <FaExternalLinkAlt size={14} aria-hidden="true" />
-              View Fullscreen
-            </a>
-
-            {/* Embedded PDF Preview */}
-            <iframe
-              src={`${resumeLink}#toolbar=0`}
-              className="w-full h-full border-none"
-              title="Resume PDF Preview"
-              sandbox=""
-            />
+              {/* Embedded PDF Preview */}
+              <iframe
+                src={resumeEmbedLink}
+                className="w-full h-full border-none"
+                title="Resume PDF Preview"
+                allow="autoplay"
+              />
+            </div>
           </div>
 
-          <p className="text-center text-gray-500 text-sm mt-4 italic">
-            If the preview doesn’t load, use the download button above.
+          <p className="text-center text-muted-foreground text-sm mt-6 italic relative z-10">
+            Trouble viewing? Use the Fullscreen button to open it natively in Google Drive.
           </p>
-        </div>
+        </m.div>
+
       </div>
     </m.div>
   );

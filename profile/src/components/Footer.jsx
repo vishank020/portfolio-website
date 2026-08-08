@@ -5,7 +5,7 @@ import { SiLeetcode } from "react-icons/si";
 
 const Footer = () => {
   return (
-    <footer className="mt-20 border-t border-[var(--nav-border)] bg-[var(--card-bg)] text-gray-600 dark:text-gray-400 transition-all duration-300">
+    <footer className="mt-20 border-t border-[var(--nav-border)] bg-[var(--card-bg)] text-muted-foreground transition-all duration-300">
       <div className="max-w-6xl mx-auto px-6 py-10 overflow-hidden">
 
         {/* Social Links */}
@@ -15,7 +15,7 @@ const Footer = () => {
             md:flex-row md:flex-wrap md:justify-center md:items-center md:gap-10 md:text-base
           "
         >
-          <span className="text-gray-500 dark:text-gray-400 font-medium md:mr-4">
+          <span className="text-muted-foreground font-medium md:mr-4">
             Socials
           </span>
 
@@ -23,7 +23,7 @@ const Footer = () => {
             href="https://github.com/vishank020"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 hover:text-[var(--accent)] transition whitespace-nowrap"
+            className="flex items-center gap-2 hover:text-primary transition whitespace-nowrap"
           >
             <FaGithub /> GitHub
           </a>
@@ -48,20 +48,20 @@ const Footer = () => {
 
           <a
             href="mailto:singhvishank20@gmail.com"
-            className="flex items-center gap-2 hover:text-[var(--accent)] transition break-all md:break-normal"
+            className="flex items-center gap-2 hover:text-primary transition break-all md:break-normal"
           >
             <FaEnvelope /> singhvishank20@gmail.com
           </a>
         </div>
 
         {/* Location */}
-        <div className="mt-6 flex items-center gap-2 text-sm md:justify-center md:text-base text-gray-500 dark:text-gray-400">
+        <div className="mt-6 flex items-center gap-2 text-sm md:justify-center md:text-base text-muted-foreground">
           <FaLocationDot />
           <span>Mumbai, India</span>
         </div>
 
         {/* Copyright */}
-        <p className="mt-6 text-xs md:text-sm text-center text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white transition">
+        <p className="mt-6 text-xs md:text-sm text-center text-gray-400 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-white transition">
           Designed & Built by Vishank Singh © 2026
         </p>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
   HashRouter as Router,
   Routes,
@@ -7,10 +7,13 @@ import {
 } from 'react-router-dom';
 import { AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
 
+// Context Imports
+import { ThemeProvider } from './components/ThemeProvider';
+
 // Component Imports
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
+
 
 // Page Imports
 import Home from './pages/home';
@@ -43,23 +46,7 @@ const AnimatedRoutes = () => {
   );
 };
 
-function App() {
-  // Theme state
-  const [darkMode, setDarkMode] = useState(() => {
-    const saved = localStorage.getItem('theme:v1');
-    return saved ? JSON.parse(saved) : true;
-  });
-
-  // Apply dark mode
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    localStorage.setItem('theme:v1', JSON.stringify(darkMode));
-  }, [darkMode]);
-
+function AppContent() {
   // Cursor tracking for spotlight glow effect
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -72,27 +59,32 @@ function App() {
     };
   }, []);
 
-  const toggleTheme = () => {
-    setDarkMode(prev => !prev);
-  };
-
   return (
     <Router>
       <LazyMotion features={domAnimation}>
-        <div className="flex flex-col min-h-screen transition-colors duration-300">
+        {/* The noise texture */}
+        <div className="theme-noise" />
+        
+        {/* Main wrapper using semantic tailwind classes */}
+        <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300 relative z-0">
           <ScrollToTop />
-
-          <Navbar toggleTheme={toggleTheme} darkMode={darkMode} />
-
+          <Navbar />
           <main className="flex-grow">
             <AnimatedRoutes />
           </main>
 
-          <WhatsAppButton />
           <Footer />
         </div>
       </LazyMotion>
     </Router>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider defaultTheme="catppuccin" defaultMode="dark">
+      <AppContent />
+    </ThemeProvider>
   );
 }
 

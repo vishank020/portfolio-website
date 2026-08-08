@@ -2,194 +2,268 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600&family=Outfit:wght@500;700;800&display=swap');
 
-/* =========================
-   Theme Tokens (GLOBAL)
-========================= */
+@layer base {
+  :root {
+    /* ---------- Shared / Fallback (Light) ---------- */
+    --background: 40 33% 98%;
+    --foreground: 240 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+    --primary: 250 65% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 5% 92%;
+    --secondary-foreground: 240 6% 25%;
+    --muted: 240 5% 94%;
+    --muted-foreground: 240 4% 46%;
+    --accent: 250 65% 95%;
+    --accent-foreground: 250 65% 35%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 250 65% 60%;
+    --radius: 0.75rem;
 
-/* ---------- LIGHT MODE ---------- */
-:root {
-  /* Core surfaces */
-  --bg-color: #f5f2eb; /* Warm Almond Sand backdrop */
-  --text-main-dynamic: #26231e; /* Deep Charcoal Stone text */
-  --card-bg: #faf6ec; /* Cozy Warm Cream Card */
-  --nav-border: rgba(139, 130, 110, 0.12); /* Warm Earthy Border */
-  --grid-color: rgba(22, 129, 79, 0.30); /* Forest Green Dot Grid (30% Opacity) */
+    /* Wallpaper card specific */
+    --card-hover: 0 0% 100%;
+    --overlay: 240 10% 10% / 0.55;
+  }
 
-  /* Accents (grounded, organic) */
-  --accent: #16814f; /* Organic Forest Green */
-  --accent-secondary: #51bd8a;
-  --shadow-glow: rgba(22, 129, 79, 0.05);
-  --mouse-glow: rgba(22, 129, 79, 0.09); /* Soft organic spotlight glow */
+  /* ============================================================
+     Catppuccin – Latte (Light) & Mocha (Dark)
+     ============================================================ */
+  [data-theme="catppuccin"] {
+    /* Latte (default light) */
+    --background: 220 23% 95%;          /* Base */
+    --foreground: 234 16% 35%;          /* Text */
+    --card: 220 22% 97%;                /* Mantle */
+    --card-foreground: 234 16% 35%;
+    --popover: 220 22% 97%;
+    --popover-foreground: 234 16% 35%;
+    --primary: 267 84% 81%;             /* Mauve */
+    --primary-foreground: 234 16% 20%;
+    --secondary: 220 16% 90%;           /* Surface0 */
+    --secondary-foreground: 234 16% 35%;
+    --muted: 220 16% 90%;
+    --muted-foreground: 233 10% 50%;    /* Overlay1 */
+    --accent: 267 84% 92%;
+    --accent-foreground: 267 50% 40%;
+    --destructive: 347 87% 72%;         /* Red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 223 16% 83%;              /* Surface1 */
+    --input: 223 16% 83%;
+    --ring: 267 84% 81%;
+    --card-hover: 220 20% 99%;
+    --overlay: 234 16% 20% / 0.5;
+  }
+
+  [data-theme="catppuccin"].dark,
+  [data-theme="catppuccin"][data-mode="dark"] {
+    /* Mocha */
+    --background: 240 21% 15%;          /* Base */
+    --foreground: 226 64% 88%;          /* Text */
+    --card: 240 21% 12%;                /* Mantle */
+    --card-foreground: 226 64% 88%;
+    --popover: 240 21% 12%;
+    --popover-foreground: 226 64% 88%;
+    --primary: 267 84% 81%;             /* Mauve */
+    --primary-foreground: 240 21% 12%;
+    --secondary: 237 16% 23%;           /* Surface0 */
+    --secondary-foreground: 226 64% 88%;
+    --muted: 237 16% 23%;
+    --muted-foreground: 228 17% 64%;    /* Overlay1 */
+    --accent: 267 50% 25%;
+    --accent-foreground: 267 84% 81%;
+    --destructive: 343 81% 75%;         /* Red */
+    --destructive-foreground: 240 21% 12%;
+    --border: 237 16% 28%;              /* Surface1 */
+    --input: 237 16% 28%;
+    --ring: 267 84% 81%;
+    --card-hover: 240 21% 18%;
+    --overlay: 240 21% 8% / 0.65;
+  }
+
+  /* ============================================================
+     Nord
+     ============================================================ */
+  [data-theme="nord"] {
+    /* Light-ish Nord (Polar Night + Snow Storm) */
+    --background: 220 16% 96%;          /* Snow Storm */
+    --foreground: 220 16% 22%;          /* Polar Night */
+    --card: 0 0% 100%;
+    --card-foreground: 220 16% 22%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 16% 22%;
+    --primary: 213 32% 52%;             /* Frost */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 16% 90%;
+    --secondary-foreground: 220 16% 22%;
+    --muted: 220 16% 90%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 213 32% 92%;
+    --accent-foreground: 213 32% 35%;
+    --destructive: 354 42% 56%;         /* Aurora Red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 87%;
+    --input: 220 13% 87%;
+    --ring: 213 32% 52%;
+    --card-hover: 220 20% 99%;
+    --overlay: 220 16% 15% / 0.55;
+  }
+
+  [data-theme="nord"].dark,
+  [data-theme="nord"][data-mode="dark"] {
+    /* Classic Nord Dark */
+    --background: 220 16% 22%;          /* Polar Night 0 */
+    --foreground: 218 27% 94%;          /* Snow Storm */
+    --card: 220 16% 18%;                /* Polar Night 1 */
+    --card-foreground: 218 27% 94%;
+    --popover: 220 16% 18%;
+    --popover-foreground: 218 27% 94%;
+    --primary: 213 32% 52%;             /* Frost */
+    --primary-foreground: 220 16% 12%;
+    --secondary: 220 16% 28%;           /* Polar Night 2 */
+    --secondary-foreground: 218 27% 94%;
+    --muted: 220 16% 28%;
+    --muted-foreground: 220 10% 65%;
+    --accent: 213 25% 30%;
+    --accent-foreground: 213 32% 70%;
+    --destructive: 354 42% 56%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 16% 32%;
+    --input: 220 16% 32%;
+    --ring: 213 32% 52%;
+    --card-hover: 220 16% 25%;
+    --overlay: 220 16% 10% / 0.7;
+  }
+
+  /* ============================================================
+     One Dark
+     ============================================================ */
+  [data-theme="onedark"] {
+    /* Light variant (rare but useful) */
+    --background: 220 13% 95%;
+    --foreground: 220 13% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+    --primary: 220 70% 55%;             /* Blue */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 10% 90%;
+    --secondary-foreground: 220 13% 25%;
+    --muted: 220 10% 90%;
+    --muted-foreground: 220 8% 45%;
+    --accent: 220 70% 94%;
+    --accent-foreground: 220 70% 35%;
+    --destructive: 355 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 10% 86%;
+    --input: 220 10% 86%;
+    --ring: 220 70% 55%;
+    --card-hover: 0 0% 100%;
+    --overlay: 220 13% 10% / 0.55;
+  }
+
+  [data-theme="onedark"].dark,
+  [data-theme="onedark"][data-mode="dark"] {
+    /* Classic One Dark */
+    --background: 220 13% 18%;          /* Background */
+    --foreground: 220 14% 81%;          /* Foreground */
+    --card: 220 13% 15%;
+    --card-foreground: 220 14% 81%;
+    --popover: 220 13% 15%;
+    --popover-foreground: 220 14% 81%;
+    --primary: 207 82% 66%;             /* Blue */
+    --primary-foreground: 220 13% 12%;
+    --secondary: 220 13% 24%;
+    --secondary-foreground: 220 14% 81%;
+    --muted: 220 13% 24%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 207 40% 28%;
+    --accent-foreground: 207 82% 70%;
+    --destructive: 355 65% 65%;         /* Red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 28%;
+    --input: 220 13% 28%;
+    --ring: 207 82% 66%;
+    --card-hover: 220 13% 21%;
+    --overlay: 220 13% 8% / 0.7;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-  background-color: var(--bg-color);
-  background-image: radial-gradient(var(--grid-color) 1.5px, transparent 1.5px);
-  background-size: 32px 32px;
-  transition: background-color 0.3s ease;
-}
-
-/* ---------- DARK MODE ---------- */
-.dark {
-  --bg-color: #080808;
-  --text-main-dynamic: #e5e7eb;
-  /* gray-200 */
-  --card-bg: rgba(15, 15, 15, 0.65);
-  --nav-border: rgba(255, 255, 255, 0.06);
-  --grid-color: rgba(16, 185, 129, 0.26); /* Emerald Glow Dot Grid (26% Opacity) */
-
-  /* Accents (neon, expressive) */
-  --accent: #10b981;
-  --accent-secondary: #34d399;
-  --shadow-glow: rgba(16, 185, 129, 0.15);
-  --mouse-glow: rgba(16, 185, 129, 0.11); /* Cyber green spotlight glow */
-}
-
-/* =========================
-   Global Styles
-   ========================= */
-body {
-  margin: 0;
-  position: relative;
-  background: transparent;
-  color: var(--text-main-dynamic);
-  font-family: 'Inter', sans-serif;
-  transition: color 0.3s ease;
-}
-
-/* Mouse spotlight glow layer */
-body::before {
-  content: '';
+.theme-noise::before {
+  content: "";
   position: fixed;
   inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
-  z-index: -1; /* Renders in front of html grid but behind all text elements */
-  background: radial-gradient(
-    350px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
-    var(--mouse-glow),
-    transparent 80%
-  );
+  z-index: 50;
+  opacity: 0.4;
 }
 
-h1,
-h2,
-h3,
+* {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.025em;
+}
+
 .mono-font {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* =========================
-   Glass / Card System
-========================= */
-.glass-card {
-  background: var(--card-bg);
-  border: 1px solid var(--nav-border);
-  border-radius: 16px;
-  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+/* Fix for Webkit sub-pixel jitter on scale transforms */
+.no-jitter {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  perspective: 1000px;
 }
 
-/* Glass effect ONLY in dark mode */
-.dark .glass-card {
-  backdrop-filter: blur(12px);
-}
-
-.glass-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-  box-shadow: 0 12px 30px -10px var(--shadow-glow);
-}
-
-/* =========================
-   Buttons
-========================= */
-.btn-primary {
-  background: linear-gradient(135deg,
-      var(--accent),
-      #059669);
-  color: #ffffff;
-  font-weight: 600;
-  padding: 10px 24px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px var(--shadow-glow);
-}
-
-/* =========================
-   Navigation Links
-========================= */
-.nav-link {
-  position: relative;
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.25s ease;
-}
-
-.nav-link:hover {
-  color: var(--accent);
-}
-
-/* ACTIVE LINK */
-.nav-link-active {
-  color: var(--accent);
-  font-weight: 600;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 3px;
-  bottom: -6px;
-  left: 0;
-  background-color: var(--accent);
-  transition: width 0.25s ease;
-}
-
-.nav-link:hover::after,
-.nav-link-active::after {
-  width: 100%;
-}
-
-/* =========================
-   WhatsApp Floating Button
-========================= */
-.whatsapp-float {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 1000;
-}
-
-.whatsapp-float:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
-}
-
-/* =========================
-   Custom Scrollbar
- ========================= */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
-
 ::-webkit-scrollbar-track {
-  background: var(--bg-color);
+  background: hsl(var(--background));
 }
-
 ::-webkit-scrollbar-thumb {
-  background: var(--nav-border);
+  background: hsl(var(--border));
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+  background: hsl(var(--primary));
+}
+
+/* Mouse spotlight glow layer for backwards compatibility with TerminalWidget effects if needed */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(
+    350px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
+    hsl(var(--primary) / 0.1),
+    transparent 80%
+  );
 }

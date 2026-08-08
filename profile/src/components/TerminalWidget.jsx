@@ -2,11 +2,23 @@ import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 const systemLogs = [
-  "Initializing Agentic Sandbox v1.4.2...",
+  "guest@vishank-dev:~$ whoami --skills",
   "Loading neural modules... SUCCESS",
-  "Establishing secure pipeline... SUCCESS",
-  "Welcome visitor! Type 'help' for available commands.",
-  ""
+  "Fetching technical stack...",
+  "",
+  "[LANGUAGES & FRAMEWORKS]",
+  "  > JavaScript, TypeScript, Python, Java",
+  "  > React.js, Angular 18, Node.js, Spring Boot 3",
+  "",
+  "[AI & MLOPS]",
+  "  > LangChain, LangGraph, LLaMA, Groq API",
+  "  > RAG pipelines, ChromaDB, FastAPI",
+  "",
+  "[DATABASES & DEVOPS]",
+  "  > PostgreSQL, MongoDB, MinIO",
+  "  > Docker, GitHub Actions, Vercel, Render",
+  "",
+  "System ready. Type 'help' for navigation commands."
 ];
 
 const TerminalWidget = () => {
@@ -123,7 +135,7 @@ const TerminalWidget = () => {
   };
 
   return (
-    <div className="w-full max-w-lg mx-auto glass-card overflow-hidden shadow-2xl border border-gray-800 bg-black/85 font-mono text-xs md:text-sm text-green-400">
+    <div className="w-full max-w-lg mx-auto rounded-2xl shadow-2xl border border-border overflow-hidden bg-black/90 font-mono text-xs md:text-sm text-green-400">
       {/* Window Title Bar */}
       <div className="bg-gray-900 px-4 py-2 flex items-center justify-between border-b border-gray-800">
         <div className="flex gap-2">
@@ -131,12 +143,12 @@ const TerminalWidget = () => {
           <div className="w-3 h-3 rounded-full bg-yellow-500" />
           <div className="w-3 h-3 rounded-full bg-green-500" />
         </div>
-        <span className="text-gray-500 font-semibold text-2xs md:text-xs">visitor@vishank-sandbox: ~</span>
+        <span className="text-muted-foreground font-semibold text-2xs md:text-xs">visitor@vishank-sandbox: ~</span>
         <div className="w-10" />
       </div>
 
       {/* Terminal Screen Console */}
-      <div className="p-4 h-64 overflow-y-auto flex flex-col gap-2 text-left selection:bg-green-700 selection:text-white scrollbar-thin scrollbar-thumb-gray-800">
+      <div className="p-4 h-[340px] overflow-y-auto flex flex-col gap-2 text-left selection:bg-green-700 selection:text-white scrollbar-thin scrollbar-thumb-gray-800">
         {history.map((line) => (
           <div key={line.id} className="whitespace-pre-wrap leading-relaxed">
             {line.isCmd ? (

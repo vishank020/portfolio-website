@@ -1,130 +1,49 @@
-import React, { useState } from "react";
-import { m } from "framer-motion";
+import React from 'react';
+import { m } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const { name, email, message } = formData;
-
-    if (!name || !email || !message) {
-      alert("Please fill in all fields.");
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    );
-
-    window.location.href = `mailto:singhvishank20@gmail.com?subject=${subject}&body=${body}`;
-
-    setIsSubmitting(false);
-  };
-
   return (
     <m.div
-      initial={{ y: 40, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      className="min-h-screen pt-28 px-4 flex justify-center"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="py-16 md:py-32 px-6 md:px-12 lg:px-20 max-w-4xl mx-auto text-center"
     >
-      <div className="w-full max-w-lg">
-        <h2 className="text-4xl font-bold mb-2 text-center">Get in Touch</h2>
-        <p className="text-gray-600 dark:text-gray-400 text-center mb-8">
-          Whether for an internship, a freelance project, or just to chat about Tech.
-        </p>
+      <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+        Let's <span className="text-primary">Connect</span>
+      </h2>
+      <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+        I'm currently looking for new opportunities, internships, and collaborations. Whether you have a question about my projects or just want to say hi, my inbox is open!
+      </p>
 
-        <form
-          onSubmit={handleSubmit}
-          className="glass-card p-8 flex flex-col gap-6"
-          noValidate
+      <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+        <a 
+          href="mailto:singhvishank20@gmail.com" 
+          className="flex items-center gap-3 px-6 py-4 bg-card border border-border rounded-xl hover:border-primary hover:text-primary hover:-translate-y-1 transition-all shadow-sm group w-full md:w-auto justify-center"
         >
-          {/* Name */}
-          <div>
-            <label
-              htmlFor="name"
-              className="text-sm text-gray-600 dark:text-gray-400 mb-1 block"
-            >
-              Your Name
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="John Cooper"
-              className="w-full p-3 bg-gray-500/10 border border-gray-300 dark:border-gray-700 rounded text-gray-800 dark:text-gray-200 focus:border-[var(--accent)] outline-none transition"
-              required
-            />
-          </div>
+          <FaEnvelope className="text-2xl text-muted-foreground group-hover:text-primary transition-colors" />
+          <span className="font-semibold">Email Me</span>
+        </a>
 
-          {/* Email */}
-          <div>
-            <label
-              htmlFor="email"
-              className="text-sm text-gray-600 dark:text-gray-400 mb-1 block"
-            >
-              Your Email
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="ceara@example.com"
-              className="w-full p-3 bg-gray-500/10 border border-gray-300 dark:border-gray-700 rounded text-gray-800 dark:text-gray-200 focus:border-[var(--accent)] outline-none transition"
-              required
-            />
-          </div>
+        <a 
+          href="https://linkedin.com/in/vishank-singh" 
+          target="_blank" rel="noreferrer"
+          className="flex items-center gap-3 px-6 py-4 bg-card border border-border rounded-xl hover:border-primary hover:text-primary hover:-translate-y-1 transition-all shadow-sm group w-full md:w-auto justify-center"
+        >
+          <FaLinkedin className="text-2xl text-muted-foreground group-hover:text-primary transition-colors" />
+          <span className="font-semibold">LinkedIn</span>
+        </a>
 
-          {/* Message */}
-          <div>
-            <label
-              htmlFor="message"
-              className="text-sm text-gray-600 dark:text-gray-400 mb-1 block"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Hey Vishank, I have a project..."
-              className="w-full p-3 bg-gray-500/10 border border-gray-300 dark:border-gray-700 rounded text-gray-800 dark:text-gray-200 focus:border-[var(--accent)] outline-none transition resize-none"
-              required
-            />
-          </div>
-
-          {/* Submit */}
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="btn-primary mt-2 py-3 disabled:opacity-60"
-          >
-            {isSubmitting ? "Sending..." : "Send Message"}
-          </button>
-        </form>
+        <a 
+          href="https://github.com/vishank020" 
+          target="_blank" rel="noreferrer"
+          className="flex items-center gap-3 px-6 py-4 bg-card border border-border rounded-xl hover:border-primary hover:text-primary hover:-translate-y-1 transition-all shadow-sm group w-full md:w-auto justify-center"
+        >
+          <FaGithub className="text-2xl text-muted-foreground group-hover:text-primary transition-colors" />
+          <span className="font-semibold">GitHub</span>
+        </a>
       </div>
     </m.div>
   );
