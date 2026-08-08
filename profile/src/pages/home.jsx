@@ -76,11 +76,11 @@ const Home = () => {
           </div>
         </div>
       </div>
-
+      
+      <section id="about" className="w-full text-left"><About /></section>
       <section id="projects" className="w-full text-left mt-20"><Projects /></section>
       <section id="experience" className="w-full text-left"><Experience /></section>
       <section id="education" className="w-full text-left"><Education /></section>
-      <section id="about" className="w-full text-left"><About /></section>
     </m.div>
   );
 };
