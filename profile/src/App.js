@@ -20,12 +20,21 @@ import Home from './pages/home';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
 
-// Scroll to top on route change
+// Disable native scroll restoration to prevent jumpy layout on refresh
+if ('scrollRestoration' in window.history) {
+  window.history.scrollRestoration = 'manual';
+}
+
+// Scroll to top on route change or refresh
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    // Scroll immediately
     window.scrollTo(0, 0);
+    // Force scroll again shortly after hydration to defeat browser native scroll restoration
+    const timeout = setTimeout(() => window.scrollTo(0, 0), 50);
+    return () => clearTimeout(timeout);
   }, [pathname]);
 
   return null;
@@ -47,18 +56,6 @@ const AnimatedRoutes = () => {
 };
 
 function AppContent() {
-  // Cursor tracking for spotlight glow effect
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      document.body.style.setProperty('--mouse-x', `${e.clientX}px`);
-      document.body.style.setProperty('--mouse-y', `${e.clientY}px`);
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
   return (
     <Router>
       <LazyMotion features={domAnimation}>

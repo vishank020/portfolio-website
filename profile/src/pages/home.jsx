@@ -14,9 +14,9 @@ const Home = () => {
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
       className="min-h-screen flex flex-col px-4 pt-24 relative overflow-hidden"
     >
-      {/* Ambient Background Gradients */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10 animate-pulse pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px] -z-10 animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
+      {/* Ambient Background Gradients (Static to prevent scroll lag) */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
 
       {/* Hero Section */}
       <div className="w-full max-w-6xl mx-auto py-12 md:py-24 relative z-10 flex flex-col-reverse lg:flex-row items-center gap-16">
@@ -24,7 +24,7 @@ const Home = () => {
         {/* Left: Text Content (Asymmetric) */}
         <div className="flex-1 flex flex-col items-start text-left">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tighter text-foreground leading-tight">
-            Hi, I'm Vishank.
+            Hi, I'm Vishank Singh.
           </h1>
 
           <div className="text-xl md:text-2xl text-primary font-medium mb-6 h-12 flex items-center gap-2">
@@ -77,10 +77,10 @@ const Home = () => {
         </div>
       </div>
 
-      <section id="about" className="w-full text-left mt-20"><About /></section>
-      <section id="projects" className="w-full text-left"><Projects /></section>
+      <section id="projects" className="w-full text-left mt-20"><Projects /></section>
       <section id="experience" className="w-full text-left"><Experience /></section>
       <section id="education" className="w-full text-left"><Education /></section>
+      <section id="about" className="w-full text-left"><About /></section>
     </m.div>
   );
 };

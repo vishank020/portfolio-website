@@ -24,7 +24,7 @@ const systemLogs = [
 const TerminalWidget = () => {
   const [history, setHistory] = useState([]);
   const [inputVal, setInputVal] = useState("");
-  const terminalEndRef = useRef(null);
+  const containerRef = useRef(null);
   const navigate = useNavigate();
 
   // Run boot sequence on mount
@@ -44,9 +44,11 @@ const TerminalWidget = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Auto scroll to bottom
+  // Auto scroll to bottom of the terminal window internally (NOT the whole page)
   useEffect(() => {
-    terminalEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (containerRef.current) {
+      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    }
   }, [history]);
 
   const handleCommand = (e) => {
@@ -148,7 +150,7 @@ const TerminalWidget = () => {
       </div>
 
       {/* Terminal Screen Console */}
-      <div className="p-4 h-[340px] overflow-y-auto flex flex-col gap-2 text-left selection:bg-green-700 selection:text-white scrollbar-thin scrollbar-thumb-gray-800">
+      <div ref={containerRef} className="p-4 h-[340px] overflow-y-auto flex flex-col gap-2 text-left selection:bg-green-700 selection:text-white scrollbar-thin scrollbar-thumb-gray-800">
         {history.map((line) => (
           <div key={line.id} className="whitespace-pre-wrap leading-relaxed">
             {line.isCmd ? (
@@ -158,7 +160,6 @@ const TerminalWidget = () => {
             )}
           </div>
         ))}
-        <div ref={terminalEndRef} />
       </div>
 
       {/* Input Console */}
